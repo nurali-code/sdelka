@@ -1,0 +1,139 @@
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    border: none
+    outline: none
+
+$prime: #124BF6
+$sec: #9FF612
+
+.container
+    max-width: 1444px
+    width: 100%
+    margin: 0 auto
+    padding: 0 22px
+
+h1, h2, h3, h4, h5, h6
+    font-family: 'Mulish', sans-serif
+
+h1,.h1
+    font-size: 24px
+    font-style: normal
+    font-weight: 600
+    margin: 0 0 24px
+
+h2,.h2
+    font-size: 32px
+    font-weight: 600
+    margin-bottom: 32px
+
+html, body
+    line-height: 1.5
+    color: #fff
+    background-color: #000
+    font-size: 16px
+    font-family: 'Nunito Sans', sans-serif
+    scroll-behavior: smooth
+    position: relative
+    z-index: 1
+
+body
+    min-height: 100vh
+    &.active
+        overflow: hidden
+
+section
+    padding: 60px 0
+
+p
+    font-size: 20px
+    margin: 0 0 30px
+
+img
+    max-width: 100%
+
+a,
+button
+    color: #000
+    text-decoration: none
+    transition: all ease .3s
+    background-color: transparent
+    &:active
+        transform: scale(.98)
+
+    &:hover
+        opacity: .8
+
+mark
+    background: transparent
+    color: #000
+
+.btn,
+.btn_prime
+    font-weight: 600
+    font-size: 16px
+    font-style: normal
+    font-weight: 600
+    line-height: 20px
+    white-space: nowrap
+    vertical-align: middle
+    color: #1E1E1F
+
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    padding: 10px 20px
+    border-radius: 2px
+    &:hover
+        opacity: 1
+
+.btn
+    border-radius: 2px
+    background-color: #FFF
+    box-shadow: 0px 10px 30px 0px rgba(18, 75, 246, 0.15), -8px -7px 20.8px 0px rgba(11, 22, 121, 0.15) inset, 2px 2px 10.2px 0px rgba(255, 255, 255, 0.38) inset
+    font-weight: 600
+    color: #1A202C
+    &:hover
+        color: white
+        background-color: transparent
+
+    &_prime
+        background-color: $sec
+        box-shadow: 0px 10px 30px 0px rgba(159, 246, 18, 0.15), -8px -7px 20.8px 0px rgba(11, 22, 121, 0.15) inset, 2px 2px 10.2px 0px rgba(255, 255, 255, 0.38) inset
+        &:hover
+            color: black
+            background-color: white
+
+input, select
+    appearance: none
+    border-radius: 12px
+    border: 1px solid rgba(36, 36, 36, 0.07)
+    height: 50px
+    display: block
+    width: 100%
+    margin-bottom: 16px
+    color: #000
+    padding: 0 18px
+    &:placeholder
+        color: #717171
+
+select
+    background-image: url('../img/arrow_down.svg')
+    background-repeat: no-repeat
+    background-position: center right 18px
+    background-size: 20px auto
+
+.wrap
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+
+.nowrap
+    white-space: nowrap
+
+
+@media screen and ( max-width: 1500px )
+    .container
+        max-width: 1144px

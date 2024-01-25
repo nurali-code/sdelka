@@ -1,0 +1,113 @@
+@import 'normolize'
+@import 'elements'
+@import 'header'
+
+.main
+    background-image: linear-gradient(70deg, #124BF6 31.87%, #0B36B9 99.66%)
+
+    .container
+        flex-direction: column
+        min-height: 100vh
+        background-repeat: no-repeat
+        background-size: 90% auto
+        @media screen and ( min-width: 1000px )
+            background-image: url('../img/h1.png')
+            background-position: center bottom -100px
+
+    h1
+        text-align: center
+        color: #FFF
+        max-width: 1200px
+        margin: auto
+
+        font-family: Mulish
+        font-size: 96px
+        font-style: normal
+        font-weight: 900
+        line-height: normal
+        text-transform: uppercase
+
+        img
+            display: inline-block
+            vertical-align: text-bottom
+            height: 110px
+            object-fit: cover
+            border-radius: 8px
+
+        i
+            white-space: nowrap
+            font-style: normal
+
+    &-bottom
+        margin-top: 10vh
+        align-self: flex-start
+        .btn_prime
+            margin-top: 12px
+
+    @media screen and ( max-width: 1500px )
+        h1
+            max-width: 1000px
+            font-size: 76px
+            img
+                height: 80px
+
+        &-bottom
+            font-size: 18px
+
+    @media screen and ( max-width: 1000px )
+        h1
+            font-size: 52px
+            max-width: 580px
+            img
+                border-radius: 4px
+                height: 62px
+                &:nth-of-type(2)
+                    display: none
+
+        &-bottom
+            margin-top: 16vh
+
+        .container
+            background-image: url('../img/h1-mob.png')
+            background-size: 540px auto
+            background-position: center top 53vh
+
+    @media screen and ( max-width: 700px)
+        .container
+            background-size: 450px auto
+            background-position: center top 52vh
+
+        h1
+            font-size: 44px
+            max-width: 480px
+            img
+                height: 50px
+
+        &-bottom
+            max-width: 500px
+            text-align: center
+            margin: 16vh auto 60px
+            width: 100%
+            .btn_prime
+                width: 100%
+
+    @media screen and ( max-width: 470px)
+        .container
+            background-size: 316px auto
+            background-position: center top 48vh
+
+        h1
+            font-size: 32px
+            max-width: 316px
+            img
+                height: 38px
+
+    @media screen and ( max-width: 360px)
+        .container
+            background-size: 276px auto
+            background-position: center top 46vh
+        h1
+            font-size: 28px
+            max-width: 276px
+            img
+                height: 34px
