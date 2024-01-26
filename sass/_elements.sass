@@ -6,6 +6,7 @@
     outline: none
 
 $prime: #124BF6
+$black: #1E1E1F
 $sec: #9FF612
 
 .container
@@ -24,14 +25,15 @@ h1,.h1
     margin: 0 0 24px
 
 h2,.h2
-    font-size: 32px
-    font-weight: 600
-    margin-bottom: 32px
+    font-size: 72px
+    font-weight: 900
+    text-transform: uppercase
+    margin: 0 0 28px
 
 html, body
     line-height: 1.5
-    color: #fff
-    background-color: #000
+    color: $black
+    background-color: white
     font-size: 16px
     font-family: 'Nunito Sans', sans-serif
     scroll-behavior: smooth
@@ -67,7 +69,7 @@ button
 
 mark
     background: transparent
-    color: #000
+    color: $prime
 
 .btn,
 .btn_prime
@@ -133,6 +135,16 @@ select
 .nowrap
     white-space: nowrap
 
+ul 
+    list-style: none
+    li 
+        background-image: url('../img/list.svg')
+        background-repeat: no-repeat
+        background-position: center left
+        padding: 0 0 0 29px
+        margin-bottom: 12px
+        &:last-child
+            margin-bottom: 0
 
 @media screen and ( max-width: 1500px )
     .container

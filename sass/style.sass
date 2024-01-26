@@ -39,6 +39,7 @@
             font-style: normal
 
     &-bottom
+        color: white
         margin-top: 10vh
         align-self: flex-start
         .btn_prime
@@ -111,3 +112,49 @@
             max-width: 276px
             img
                 height: 34px
+
+.difference
+    padding: 150px 0
+    h2
+        margin-bottom: 82px
+    .item
+        display: inline-block
+        padding: 20px
+        border-radius: 4px
+        background: linear-gradient(88deg, #F6F6FA 0%, #F8F8FF 100%)
+        box-shadow: -12px 12px 11.3px 0px rgba(48, 87, 146, 0.20), 0px 4px 28.7px 0px rgba(48, 87, 146, 0.20)
+        padding-top: 40px
+
+        &__heading
+            min-height: 66px
+            font-size: 20px
+            font-weight: 900
+            text-transform: uppercase
+            margin-bottom: 15px
+            justify-content: baselane
+            margin: 0 0 40px
+            b
+                font-size: 96px
+                vertical-align: middle
+                font-weight: 700
+                line-height: 70%
+                margin-right: 20px
+
+        &__text
+            font-weight: 700
+            font-size: 18px
+            margin: 0 0 20px
+
+        li
+            font-size: 18px
+
+        &.first
+            // max-width: 730px
+            .item__heading
+                border-left: 15px solid $black
+                padding: 15px 0 15px 20px
+
+        &.second
+            max-width: 668px
+            background: $black
+            color: white
