@@ -133,12 +133,9 @@
             margin-bottom: 15px
             justify-content: baselane
             margin: 0 0 40px
-            b
-                font-size: 96px
+            img
+                display: inline-block
                 vertical-align: middle
-                font-weight: 700
-                line-height: 70%
-                margin-right: 20px
 
         &__text
             font-weight: 700
@@ -148,13 +145,36 @@
         li
             font-size: 18px
 
-        &.first
-            // max-width: 730px
-            .item__heading
-                border-left: 15px solid $black
-                padding: 15px 0 15px 20px
-
         &.second
+            position: relative
+            transform: rotate(-6.12deg)
+            display: block
+            z-index: 111
             max-width: 668px
             background: $black
+            margin: 0 auto
             color: white
+            .item__heading
+                img
+                    margin-right: 10px
+                    &:last-of-type
+                        width: 69px
+                        margin-left: 40px
+
+        &.third
+            width: 360px
+            background: $sec
+            position: absolute
+            z-index: 111
+            bottom: 19%
+            right: 15%
+            transform: rotate(9.505deg)
+            .item
+                &__heading
+                    margin-bottom: 15px
+                    img
+                        display: block
+                        margin-bottom: 20px
+
+                &__text
+                    max-width: 90%
