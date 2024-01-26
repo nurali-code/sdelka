@@ -114,7 +114,6 @@
                 height: 34px
 
 .difference
-    padding: 150px 0
     overflow: hidden
     h2
         margin-bottom: 82px
@@ -204,9 +203,9 @@
                     right: 22px
 
     @media screen and ( max-width: 1000px )
-        padding: 100px 0
         h2
             margin-bottom: 50px
+       
         .item
             display: block
             transform: rotate(-4deg)
@@ -237,8 +236,6 @@
                         margin-left: 15px
 
     @media screen and ( max-width: 460px )
-        padding: 80px 0 70px
-
         .item
             font-size: 18px
             margin-bottom: 20px
@@ -266,3 +263,58 @@
     @media screen and ( max-width: 359px )
         .item.second .item__heading img:last-of-type
             display: none
+
+.capability
+
+    .container
+        align-items: center
+
+    .item
+        width: 100%
+
+        &-img
+            margin-bottom: 20px
+            img
+                display: block
+                object-fit: cover
+                aspect-ratio: 16/9.01
+                width: 100%
+
+        &__heading
+            font-size: 20px
+            font-weight: 900
+            line-height: normal
+            text-transform: uppercase
+            padding-bottom: 20px
+            border-bottom: 1px solid #000
+
+    @media screen and ( min-width: 900px )
+        h2
+            position: absolute
+            width: 50%
+            right: 0
+            top: 0
+
+        .item
+            width: 50%
+
+        .col
+            width: 43.8%
+            .item
+                width: 100%
+                &:first-of-type
+                    margin-bottom: 52px
+
+    @media screen and ( max-width: 900px )
+        h2 
+            margin-bottom: 52px
+        .item,
+        .col
+            max-width: 600px
+            margin: 0 auto 
+        .item
+            margin: 0 auto 30px
+            &-img 
+                margin-bottom: 15px
+            &__heading 
+                padding-bottom: 15px
