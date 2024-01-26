@@ -125,9 +125,10 @@
         display: inline-block
         padding: 20px
         border-radius: 4px
-        background: linear-gradient(88deg, #F6F6FA 0%, #F8F8FF 100%)
         box-shadow: -12px 12px 11.3px 0px rgba(48, 87, 146, 0.20), 0px 4px 28.7px 0px rgba(48, 87, 146, 0.20)
         padding-top: 40px
+        &.first
+            background: linear-gradient(88deg, #F6F6FA 0%, #F8F8FF 100%)
 
         &__heading
             min-height: 66px
@@ -136,20 +137,25 @@
             text-transform: uppercase
             margin-bottom: 15px
             justify-content: baselane
-            margin: 0 0 40px
-            img
-                display: inline-block
-                vertical-align: middle
+            margin: 0 0 30px
+            display: flex
+            gap: 10px
+            align-items: center
+            mark
+                white-space: nowrap
 
         &__text
             font-weight: 700
             font-size: 18px
+            line-height: normal
+            margin: 0
 
-        ul 
+        ul
             margin: 20px 0 0
 
         li
             font-size: 18px
+            line-height: normal
 
         &.second
             position: relative
@@ -165,19 +171,16 @@
                     margin-right: 10px
                     &:last-of-type
                         width: 69px
-                        margin-left: 40px
+                        margin: 0 0 0 30px
 
         &.third
             width: 360px
             background: $sec
-            position: absolute
             z-index: 111
-            bottom: 19%
-            right: 15%
-            transform: rotate(9.505deg)
             .item
                 &__heading
                     margin-bottom: 15px
+                    display: block
                     img
                         display: block
                         margin-bottom: 20px
@@ -185,9 +188,81 @@
                 &__text
                     max-width: 90%
 
+            @media screen and ( min-width: 1000px )
+                position: absolute
+                bottom: 19%
+                right: 15%
+                transform: rotate(9.505deg)
+
     @media screen and ( max-width: 1500px )
         h2
             max-width: 900px
+
         .item
+            @media screen and ( min-width: 1000px )
+                &.third
+                    right: 22px
+
+    @media screen and ( max-width: 1000px )
+        padding: 100px 0
+        h2
+            margin-bottom: 50px
+        .item
+            display: block
+            transform: rotate(-4deg)
+            width: 94%
+            max-width: 600px
+            margin: 0 auto
+
+            &.first
+                margin-bottom: 10px
+            &.second
+                z-index: 222
+                max-width: 600px
+                transform: rotate(4deg)
+
             &.third
-                right: 22px
+                position: relative
+                top: -30px
+                width: 94%
+                max-width: 600px
+
+    @media screen and ( max-width: 700px )
+        .item
+            &.second
+                width: 91%
+                margin: 0 11px 0 auto
+                img
+                    &:last-of-type
+                        margin-left: 15px
+
+    @media screen and ( max-width: 460px )
+        padding: 80px 0 70px
+
+        .item
+            font-size: 18px
+            margin-bottom: 20px
+            padding: 30px 20px
+            &.first
+                margin-bottom: 0
+
+            &__heading
+                margin-bottom: 20px
+                font-size: 18px
+                img
+                    height: 50px
+
+            &__text,
+            li
+                font-size: 16px
+
+            li
+                margin-bottom: 8px
+
+            &.third
+                .item__heading img
+                    margin-bottom: 12px
+
+    @media screen and ( max-width: 359px )
+        .item.second .item__heading img:last-of-type
+            display: none
