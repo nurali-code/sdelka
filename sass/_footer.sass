@@ -1,0 +1,60 @@
+.footer
+    background-color: $black
+    color: white
+    padding: 50px 0 150px
+    .container
+        align-items: flex-start
+
+    .col
+        max-width: 18%
+
+    &__heading
+        font-size: 18px
+        line-height: normal
+        font-weight: 800
+        color: white
+        display: block
+        padding: 10px 0
+        &:first-of-type
+            padding-top: 0
+
+    a
+        &:hover
+            color: $sec
+            text-decoration: underline
+
+    &__link
+        font-size: 14px
+        line-height: normal
+        font-weight: 400
+        display: block
+        padding: 5px 0
+        color: white
+
+    @media screen and ( max-width: 1000px )
+        padding: 100px 0
+        .col
+            max-width: 32%
+            &:first-child
+                width: 100%
+                max-width: 100%
+                margin-bottom: 50px
+            &:last-of-type
+                width: 100%
+                max-width: 100%
+                margin-top: 50px
+                a
+                    vertical-align: top
+                    display: inline-block
+                    min-width: 49%
+
+    @media screen and ( max-width: 700px )
+        .col 
+            width: 48%
+            max-width: 48%
+            &:nth-child(4)
+                margin-left: auto 
+
+    @media screen and ( max-width: 460px )
+        &__heading
+            font-size: 16px
