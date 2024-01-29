@@ -43,9 +43,10 @@ gsap.to("#freeImg", {
     scrollTrigger: {
         trigger: ".free-wrap",
         start: "20% 10%",
+        // pin: true,
         end: "bottom bottom",
-        // markers: true,
+        markers: true,
         scrub: true
     },
-    filter: "blur(0px)" 
+    filter: "blur(0px)"
 });
