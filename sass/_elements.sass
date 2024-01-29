@@ -17,7 +17,7 @@ $sec: #9FF612
     position: relative
     z-index: 1
 
-h1, h2, h3, h4, h5, h6
+h1, h2, .h2, h3, h4, h5, h6
     font-family: 'Mulish', sans-serif
 
 h1,.h1
@@ -79,6 +79,9 @@ mark
     background: transparent
     color: $prime
 
+.red
+    color: #F86247
+
 .btn,
 .btn_prime,
 .btn_blue,
@@ -99,7 +102,7 @@ mark
     border-radius: 2px
     &:hover
         opacity: .5
-    
+
     &:active
         opacity: 1
         transform: scale(.95)
@@ -145,6 +148,20 @@ mark
         margin-bottom: 12px
         &:last-child
             margin-bottom: 0
+
+.info
+    // display: inline-block
+    max-width: 440px
+    font-size: 14px
+    font-style: normal
+    font-weight: 400
+    padding: 20px 20px 20px 60px
+    background-repeat: no-repeat
+    background-image: url('../img/icon.svg')
+    background-position: center left 20px
+    border-radius: 4px
+    background-color: #F8F8FF
+    box-shadow: -12px 12px 11.3px 0px rgba(48, 87, 146, 0.20)
 
 @media screen and ( max-width: 1500px )
     .container

@@ -352,7 +352,7 @@
                 width: 100%
                 height: 100%
                 z-index: -1
-                transition: all ease .5s
+                transition: all ease .8s
                 transform: scaleY(0)
                 transform-origin: 0% 100%
 
@@ -377,7 +377,7 @@
             &:first-child
                 border-top: 1px solid white
 
-            &:hover
+            &:hover, &.is_active
                 background-size: 1600% auto
                 z-index: 111
                 img
@@ -447,10 +447,73 @@
         li
             font-size: 16px
 
+.free
+    padding: 0
+    .container
+        position: relative
+        z-index: 1
+
+    .section
+        padding: 150px 0
+        max-width: 1080px
+
+    .h2
+        margin-bottom: 50px
+
+    &-wrap
+        // background-color: red
+        position: absolute
+        top: 0
+        width: 50%
+        height: 100%
+        right: 0
+        z-index: -1
+
+    &-img
+        // background-color: blue
+        position: sticky
+        top: 20%
+        padding: 300px 0 
+        right: 0
+        img
+            display: block
+
+.tariff
+    position: relative
+    z-index: -1
+    color: white
+    background-color: #1E1E1F
+    padding: 150px 0
+    min-height: 100vh
+    flex-direction: column
+    box-shadow: 0 0 0 100vmax #1E1E1F
+    clip-path: inset(0 -100vmax)
+
+    &-title
+        width: 100%
+        .tariff__descr
+            text-align: right
+            margin: 0
+
+    .h2
+        margin-bottom: 0
+
+    &__text
+        font-size: 24px
+        font-weight: 900
+        line-height: normal
+        margin: 0
+
+    &__descr
+        font-size: 12px
+        font-weight: 600
+        line-height: 16px
+        max-width: 436px
+        margin: auto auto 100px 0
+
 .contacts
     background-color: $black
     color: white
-    margin-top: 100px
     h2
         margin-bottom: 70px
         mark
@@ -492,7 +555,7 @@
 
     nav
         width: unset !important
-        margin: 0 auto auto 
+        margin: 0 auto auto
         @media screen and ( min-width: 1000px )
             flex-direction: column
             align-items: flex-start

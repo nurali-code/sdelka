@@ -126,24 +126,67 @@
                 <img loading="lazy" src="img/question.svg" alt="question">
             </h2>
             <ul>
-                <li>
+                <li class="services-item">
                     <img loading="lazy" src="img/srvice.jpg" alt="srvice">
                     Интуитивный интерфейс
                 </li>
-                <li>
+                <li class="services-item">
                     <img loading="lazy" src="img/2.jpg" alt="2">
                     Еженедельные обновления
                 </li>
-                <li>
+                <li class="services-item">
                     <img loading="lazy" src="img/srvice.jpg" alt="srvice">
                     Видео-обучение <br>
                     и ютуб-канал
                 </li>
-                <li>
+                <li class="services-item">
                     <img loading="lazy" src="img/2.jpg" alt="1">
                     Заботливая поддержка
                 </li>
             </ul>
+        </div>
+    </section>
+
+    <section class="free">
+        <div class="container">
+            <div class="section">
+                <h2>Дарим один месяц обслуживания <br> <mark class="red">в подарок</mark></h2>
+                <p class="info">При переходе в Сделку из другой системы и оплате трёх месяцев работы </p>
+                <a href="#" class="btn_blue">Запросить демонстрацию</a>
+            </div>
+
+            <div class="section">
+                <p class="h2">вы сможете сменить сделку на другую crm в любой момент</p>
+                <p class="h2">Мы Подготовим файлы
+                    <mark class="red">со всеми объектами, контактами и заявками</mark>
+                </p>
+                <p class="h2 red"> Мы поможем сделать
+                    <mark>переход без потерь <br> за 1 день</mark>
+                </p>
+            </div>
+
+            <div class="tariff wrap">
+                <div class="wrap tariff-title">
+                    <div class="col">
+                        <h3 class="h2">тарифы</h3>
+                        <p class="tariff__text">он всего один</p>
+                    </div>
+                    <div class="col">
+                        <p class="tariff__text">от 500 руб/месяц</p>
+                        <p class="tariff__descr">за пользователя</p>
+                    </div>
+                </div>
+                <p class="tariff__descr">
+                    ООО “СДЕЛКА” ИНН: 23323423432 Акция действует бессрочно для всех риэлторов России и не содержит
+                    подвоха. На сайте указана чистая правда. И даже мелким шрифтом написана чистая правда.
+                </p>
+            </div>
+
+            <div class="free-wrap">
+                <div class="free-img">
+                    <img src="img/500.png" alt="500">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -207,11 +250,21 @@
             <div class="col">
                 <a href="#" class="footer__link">Политика обработки <br>
                     персональных данных
-                </a> 
+                </a>
                 <a href="#" class="footer__link">Договор оферты</a>
             </div>
         </div>
     </footer>
+
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script>
+        $('.services-item').hover(
+        function () {
+            $('.services-item').removeClass('is_active');
+            $(this).addClass('is_active');
+        }
+    );
+    </script>
 
 
 </body>
