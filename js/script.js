@@ -49,10 +49,33 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.to("#freeImg", {
     scrollTrigger: {
         trigger: ".free-wrap",
-        start: "20% 10%",
-        end: "bottom bottom",
+        start: "80% 80%",
+        end: "115% 100%",
         // markers: true,
         scrub: true
     },
     filter: "blur(0px)"
+});
+
+gsap.to("#free", {
+    scrollTrigger: {
+        trigger: ".free-wrap",
+        start: "70% 70%",
+        end: "bottom bottom",
+        // markers: true,
+        scrub: true
+    },
+    backgroundColor: "#1E1E1F",
+    color: '#fff'
+});
+
+gsap.to("#shadown", {
+    scrollTrigger: {
+        trigger: ".free-wrap",
+        start: "105% 80%",
+        end: "110% 80%",
+        // markers: true,
+        scrub: true
+    },
+    opacity: '1'
 });
