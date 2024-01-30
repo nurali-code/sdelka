@@ -21,7 +21,7 @@ document.querySelectorAll('.capability .js').forEach(function (item) {
             currentImg = (currentImg + 1) % imgs.length;
             imgs[currentImg].style.display = 'block';
         }
-        var interval = setInterval(fadeInNextImage, 1200);
+        var interval = setInterval(fadeInNextImage, 800);
         this.setAttribute('data-interval', interval);
     });
 
@@ -45,7 +45,7 @@ gsap.to("#freeImg", {
         start: "20% 10%",
         // pin: true,
         end: "bottom bottom",
-        markers: true,
+        // markers: true,
         scrub: true
     },
     filter: "blur(0px)"
