@@ -16,33 +16,50 @@ document.querySelectorAll('.modal_toggle').forEach(function (modalOpen) {
 
 // Для .capability .js
 document.querySelectorAll('.capability .js').forEach(function (item) {
-    item.addEventListener('mouseenter', function () {
-        var imgs = this.querySelectorAll('.item-img img');
+    var interval, currentImg = 0;
+
+    function startAnimation() {
+        var imgs = item.querySelectorAll('.item-img img');
         Array.from(imgs).forEach(function (img) {
             img.style.display = 'none';
         });
-        imgs[1].style.display = 'block'; // Показываем вторую картинку
-        var currentImg = 1; // Устанавливаем индекс второй картинки
-        function fadeInNextImage() {
-            imgs[currentImg].style.display = 'none';
-            currentImg = (currentImg + 1) % imgs.length;
-            imgs[currentImg].style.display = 'block';
-        }
-        var interval = setInterval(fadeInNextImage, 500);
-        this.setAttribute('data-interval', interval);
-    });
+        imgs[1].style.display = 'block';
+        currentImg = 1;
+        interval = setInterval(fadeInNextImage, 500);
+        item.setAttribute('data-interval', interval);
+    }
 
-    item.addEventListener('mouseleave', function () {
-        clearInterval(this.getAttribute('data-interval'));
-        var imgs = this.querySelectorAll('.item-img img');
+    function stopAnimation() {
+        clearInterval(interval);
+        var imgs = item.querySelectorAll('.item-img img');
         Array.from(imgs).forEach(function (img, index) {
-            if (index !== 1) { // Скрываем все картинки, кроме второй
+            if (index !== 1) {
                 img.style.display = 'none';
             }
         });
-        imgs[1].style.display = 'block'; // Показываем вторую картинку
+        imgs[0].style.display = 'block';
+        currentImg = 0;
+    }
+
+    item.addEventListener('mouseenter', startAnimation);
+    item.addEventListener('mouseleave', stopAnimation);
+    item.addEventListener('click', function () {
+        if (item.getAttribute('data-interval')) {
+            stopAnimation();
+        } else {
+            startAnimation();
+        }
     });
+
+    function fadeInNextImage() {
+        var imgs = item.querySelectorAll('.item-img img');
+        imgs[currentImg].style.display = 'none';
+        currentImg = (currentImg + 1) % imgs.length;
+        imgs[currentImg].style.display = 'block';
+    }
 });
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 

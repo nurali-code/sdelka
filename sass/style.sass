@@ -289,13 +289,19 @@
                     z-index: 11
 
             &.last
+                overflow: hidden
+                background-color: red
                 img
                     transition: all ease .1s
+                    &:last-child
+                        height: unset
                 &:hover
                     img
+                        animation: topBottom 2s linear forwards infinite alternate-reverse
                         opacity: 0
                         &:last-child
                             opacity: 1
+
         &__heading
             font-size: 20px
             font-weight: 900
@@ -780,3 +786,9 @@
 
 @import 'footer'
 @import 'modal'
+
+@keyframes topBottom
+    0%
+        transform: translateY(-65px)
+    100%
+        transform: translateY(0)
