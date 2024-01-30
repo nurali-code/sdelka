@@ -496,6 +496,11 @@
         right: 24px
         z-index: -1
 
+    &__shadown
+        position: absolute
+        top: 100%
+        width: 100%
+
     &-img
         position: sticky
         top: 10%
@@ -518,6 +523,9 @@
         &-img
             padding: 250px 0 120px
 
+        &__shadown
+            top: 95%
+
     @media screen and ( max-width: 1100px)
         .section
             padding: 100px 0
@@ -529,17 +537,30 @@
         &-wrap
             width: 500px
 
+        &__shadown
+            top: 99%
+
     @media screen and ( max-width: 700px)
         &-wrap
-            width: calc( 100% - 44px )
+            width: calc( 100% - 34px )
 
         &-img
-            padding: 200px 0 130px
+            padding: 200px 0 80px
 
         .signature
             left: auto
             right: 0
             max-width: 30vw
+
+        &__shadown
+            top: 100%
+
+    @media screen and ( max-width: 460px)
+        &-img
+            padding: 200px 0 100px
+
+        &__shadown
+            top: 98%
 
 .tariff
     position: relative
@@ -580,14 +601,22 @@
         &__descr
             margin: 137px auto 0 0
 
+        &__text
+            font-size: 20px
+
     @media screen and ( max-width: 700px)
         min-height: unset
+        &__descr
+            text-align: center
+            
         &-title
             display: block
+            .tariff__descr
+                margin-left: auto
 
         .col-2
             text-align: right
-            margin-top: 65vw
+            margin-top: 58vw
 
 .contacts
     background-color: $black
