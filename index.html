@@ -26,7 +26,7 @@
                         <b>Телефон отдела продаж</b>
                         <a href="tel:+79145996914">+7 914 599 69 14</a>
                     </span>
-                    <a href="#" class="btn_prime">Свяжитесь со мной</a>
+                    <button class="btn_prime modal_toggle">Свяжитесь со мной</button>
                     <a href="#" class="btn">Вход</a>
                     <button class="menu" title="Меню"><span></span></button>
                 </div>
@@ -217,7 +217,7 @@
                     <a href="tel:88001113322">8 800 111 33 22</a>
                     <a href="https://t.me/sdelka_sakhar" target="_blank">Telegram</a>
                     <a href="mailto:sales@sdelka-crm.ru">sales@sdelka-crm.ru</a>
-                    <a href="#" class="btn_blue">Задать вопрос в чате</a>
+                    <button class="btn_blue modal_toggle">Задать вопрос в чате</button>
                 </nav>
             </div>
             <div class="contacts-footer wrap">
@@ -269,6 +269,23 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <button class="modal-close wrap modal_toggle">&times;</button>
+            <p class="heading">Мы свяжемся с вами <br> в течение 15 минут</p>
+            <form action="#">
+                <label for="inp">Ваше имя</label>
+                <input type="text" name="name" required>
+                <label for="inp">Телефон</label>
+                <input type="tel" name="tel" required>
+                <label for="inp">Город</label>
+                <input type="text" name="tel" required>
+                <button type="submit" class="btn_prime">Свяжитесь со мной</button>
+            </form>
+            <p class="policy">Нажимая на кнопку, Вы соглашаетесь с условиями <a href="#">политики конфиденциальности</a></p>
+        </div>
+    </div>
 
     <!-- <script src="./js/jquery-3.7.1.min.js"></script> -->
     <script src="./js/gsap.min.js"></script>
