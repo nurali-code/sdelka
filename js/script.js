@@ -67,8 +67,8 @@ gsap.to("#freeImg", {
     scrollTrigger: {
         trigger: ".free-wrap",
         start: "80% 80%",
-        end: "115% 100%",
-        // markers: true,
+        end: "100% 80%",
+        markers: true,
         scrub: true
     },
     filter: "blur(0px)"
@@ -89,8 +89,8 @@ gsap.to("#free", {
 gsap.to("#shadown", {
     scrollTrigger: {
         trigger: ".free-wrap",
-        start: "105% 80%",
-        end: "110% 80%",
+        start: "107% 80%",
+        end: "112% 80%",
         // markers: true,
         scrub: true
     },
