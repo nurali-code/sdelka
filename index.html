@@ -27,10 +27,13 @@
 			</header>
 
 			<h1>
-				CRM <img src="img/h1_1.jpg" alt="h1">
-				<i>для агентств</i>
-				недвижимости <img src="img/h1.gif" alt="h1">
-				<img src="img/h1_3.jpg" alt="img"> и риэлторов
+				<i class="js-textify">CRM</i>
+				<img src="img/h1_1.jpg" alt="h1">
+				<i class="js-textify">для агентств</i>
+				<i class="js-textify">недвижимости</i>
+				<img src="img/h1.gif" alt="h1">
+				<img src="img/h1_3.jpg" alt="img">
+				<i class="js-textify">и риэлторов</i>
 
 				<picture class="h1_shadow" id="h1_shadow">
 					<source media="(min-width: min-width: 1000px)" srcset="img/h1.png">
@@ -49,7 +52,7 @@
 
 	<section class="difference">
 		<div class="container">
-			<h2>
+			<h2 class="js-textify">
 				<mark>Чем сделка отличается</mark>
 				от обычных CRM систем
 				для риэлторов?
@@ -95,7 +98,7 @@
 
 	<section class="capability">
 		<div class="container wrap">
-			<h2>возможности <br> сделки</h2>
+			<h2 class="js-textify">возможности <br> сделки</h2>
 			<div class="col">
 				<div class="item js">
 					<div class="item-img">
@@ -131,7 +134,7 @@
 	<section class="services">
 		<div class="container">
 			<h2 class="h3 wrap">
-				<span>что ещё есть <br> в Сделке</span>
+				<span class="js-textify">что ещё есть <br> в Сделке</span>
 				<img loading="lazy" src="img/question.svg" alt="question">
 			</h2>
 			<ul>
@@ -159,18 +162,23 @@
 	<section class="free" id="free">
 		<div class="container">
 			<div class="section">
-				<h2>Дарим один месяц обслуживания <br> <mark class="red">в подарок</mark></h2>
+				<h2>
+					<span class="js-textify">Дарим один месяц обслуживания </span> <br>
+					<mark class="red js-textify">в подарок</mark>
+				</h2>
 				<p class="info">При переходе в Сделку из другой системы и оплате трёх месяцев работы </p>
 				<a href="#" class="btn_blue">Запросить демонстрацию</a>
 			</div>
 
 			<div class="section">
-				<p class="h2">вы сможете сменить сделку на другую crm в любой момент</p>
-				<p class="h2">Мы Подготовим файлы
-					<mark class="red">со всеми объектами, контактами и заявками</mark>
+				<p class="h2 js-textify">вы сможете сменить сделку на другую crm в любой момент</p>
+				<p class="h2">
+					<span class="js-textify">Мы Подготовим файлы</span>
+					<mark class="red js-textify">со всеми объектами, контактами и заявками</mark>
 				</p>
-				<p class="h2 red"> Мы поможем сделать
-					<mark>переход без потерь <br> за 1 день</mark>
+				<p class="h2 red">
+					<span class="js-textify">Мы поможем сделать</span>
+					<mark class="js-textify">переход без потерь <br> за 1 день</mark>
 					<img loading="lazy" src="img/signature.svg" class="signature" alt="signature">
 				</p>
 			</div>
@@ -178,7 +186,7 @@
 			<div class="tariff wrap">
 				<div class="wrap tariff-title">
 					<div class="col">
-						<h3 class="h2">тарифы</h3>
+						<h3 class="h2 js-textify">тарифы</h3>
 						<p class="tariff__text">он всего один</p>
 					</div>
 					<div class="col col-2">
@@ -203,7 +211,10 @@
 
 	<section class="contacts">
 		<div class="container">
-			<h2>Звоните, пишите. <mark>Мы <span class="nowrap">на связи</span></mark></h2>
+			<h2>
+				<span class="js-textify">Звоните, пишите. </span>
+				<mark class="js-textify">Мы на связи</mark>
+			</h2>
 			<div class="wrap">
 				<div class="col">
 					<iframe
@@ -288,7 +299,19 @@
 		</div>
 	</div>
 
-	<!-- <script src="./js/jquery-3.7.1.min.js"></script> -->
+	<script src="./js/textify.min.js"></script>
+	<script>
+		new Textify();
+		const section1 = new Textify({
+			selector: ".js-textify",
+			once: true,
+			scale: .1,
+			rotation: 20,
+			easing: "ease",
+			fade: false,
+			duration: 1000
+		});
+	</script>
 	<script src="./js/gsap.min.js"></script>
 	<script src="./js/ScrollTrigger.min.js"></script>
 	<script src="./js/script.js"></script>
