@@ -59,7 +59,7 @@ document.querySelectorAll('.capability .js .item-img').forEach(function (item) {
             item.removeAttribute('data-interval'); // Удаляем атрибут после остановки анимации
         } else {
             // Останавливаем анимации на других элементах перед запуском текущей анимации
-            document.querySelectorAll('.capability .js').forEach(function (otherItem) {
+            document.querySelectorAll('.capability .js .item-img').forEach(function (otherItem) {
                 if (otherItem !== item) {
                     stopAnimation.call(otherItem);
                 }
@@ -78,6 +78,17 @@ document.querySelectorAll('.capability .js .item-img').forEach(function (item) {
 
 
 gsap.registerPlugin(ScrollTrigger);
+
+gsap.to("#h1_shadow", {
+    scrollTrigger: {
+        trigger: "h1",
+        start: "30% 0%",
+        end: "170% 0%",
+        // markers: true,
+        scrub: true
+    },
+    y: -100
+});
 
 gsap.to("#freeImg", {
     scrollTrigger: {
