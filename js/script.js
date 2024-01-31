@@ -68,7 +68,7 @@ gsap.to("#freeImg", {
         trigger: ".free-wrap",
         start: "80% 80%",
         end: "100% 80%",
-        markers: true,
+        // markers: true,
         scrub: true
     },
     filter: "blur(0px)"
