@@ -15,11 +15,14 @@ document.querySelectorAll('.modal_toggle').forEach(function (modalOpen) {
 
 
 // Для .capability .js
-document.querySelectorAll('.capability .js').forEach(function (item) {
-    var interval, currentImg = 0;
+document.querySelectorAll('.capability .js .item-img').forEach(function (item) {
+    var currentImg = 0;
+    var interval;
 
     function startAnimation() {
-        var imgs = item.querySelectorAll('.item-img img');
+        if (interval) return; // Предотвращаем повторное запускание анимации
+
+        var imgs = item.querySelectorAll('img');
         Array.from(imgs).forEach(function (img) {
             img.style.display = 'none';
         });
@@ -31,7 +34,8 @@ document.querySelectorAll('.capability .js').forEach(function (item) {
 
     function stopAnimation() {
         clearInterval(interval);
-        var imgs = item.querySelectorAll('.item-img img');
+        interval = null; // Сбрасываем значение интервала
+        var imgs = item.querySelectorAll('img');
         Array.from(imgs).forEach(function (img, index) {
             if (index !== 1) {
                 img.style.display = 'none';
@@ -42,32 +46,35 @@ document.querySelectorAll('.capability .js').forEach(function (item) {
     }
 
     function fadeInNextImage() {
-        var imgs = item.querySelectorAll('.item-img img');
+        var imgs = item.querySelectorAll('img');
         imgs[currentImg].style.display = 'none';
         currentImg = (currentImg + 1) % imgs.length;
         imgs[currentImg].style.display = 'block';
     }
 
-    // Добавляем обработчик клика и touchstart
-    item.addEventListener('click', function () {
+    function handleClick(event) {
+        event.preventDefault(); // Предотвращаем действие по умолчанию
         if (item.getAttribute('data-interval')) {
             stopAnimation();
+            item.removeAttribute('data-interval'); // Удаляем атрибут после остановки анимации
         } else {
+            // Останавливаем анимации на других элементах перед запуском текущей анимации
+            document.querySelectorAll('.capability .js').forEach(function (otherItem) {
+                if (otherItem !== item) {
+                    stopAnimation.call(otherItem);
+                }
+            });
             startAnimation();
         }
-    });
+    }
 
-    item.addEventListener('touchstart', function () {
-        if (item.getAttribute('data-interval')) {
-            stopAnimation();
-        } else {
-            startAnimation();
-        }
-    });
-
+    // Обработчики событий
+    item.addEventListener('click', handleClick);
     item.addEventListener('mouseenter', startAnimation);
     item.addEventListener('mouseleave', stopAnimation);
+    item.addEventListener('touchstart', handleClick);
 });
+
 
 
 gsap.registerPlugin(ScrollTrigger);

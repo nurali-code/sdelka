@@ -795,8 +795,17 @@
 @import 'footer'
 @import 'modal'
 
-@keyframes topBottom
-    0%
-        transform: translateY(-65px)
-    100%
-        transform: translateY(0)
+@media screen and ( min-width: 700px )
+    @keyframes topBottom
+        0%
+            transform: translateY(-65px)
+        100%
+            transform: translateY(0)
+    
+@media screen and ( max-width: 700px )
+    @keyframes topBottom
+        0%
+            transform: translateY(-45px)
+        100%
+            transform: translateY(0)
+
