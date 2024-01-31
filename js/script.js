@@ -41,8 +41,14 @@ document.querySelectorAll('.capability .js').forEach(function (item) {
         currentImg = 0;
     }
 
-    item.addEventListener('mouseenter', startAnimation);
-    item.addEventListener('mouseleave', stopAnimation);
+    function fadeInNextImage() {
+        var imgs = item.querySelectorAll('.item-img img');
+        imgs[currentImg].style.display = 'none';
+        currentImg = (currentImg + 1) % imgs.length;
+        imgs[currentImg].style.display = 'block';
+    }
+
+    // Добавляем обработчик клика и touchstart
     item.addEventListener('click', function () {
         if (item.getAttribute('data-interval')) {
             stopAnimation();
@@ -51,14 +57,17 @@ document.querySelectorAll('.capability .js').forEach(function (item) {
         }
     });
 
-    function fadeInNextImage() {
-        var imgs = item.querySelectorAll('.item-img img');
-        imgs[currentImg].style.display = 'none';
-        currentImg = (currentImg + 1) % imgs.length;
-        imgs[currentImg].style.display = 'block';
-    }
-});
+    item.addEventListener('touchstart', function () {
+        if (item.getAttribute('data-interval')) {
+            stopAnimation();
+        } else {
+            startAnimation();
+        }
+    });
 
+    item.addEventListener('mouseenter', startAnimation);
+    item.addEventListener('mouseleave', stopAnimation);
+});
 
 
 gsap.registerPlugin(ScrollTrigger);
