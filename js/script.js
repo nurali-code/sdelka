@@ -13,7 +13,6 @@ document.querySelectorAll('.modal_toggle').forEach(function (modalOpen) {
     });
 });
 
-
 // Для .capability .js
 document.querySelectorAll('.capability .js .item-img').forEach(function (item) {
     var currentImg = 0;
@@ -75,19 +74,41 @@ document.querySelectorAll('.capability .js .item-img').forEach(function (item) {
     item.addEventListener('touchstart', handleClick);
 });
 
+// Для phoneMask
+const phone = document.getElementById('phone');
+let phoneMask = new Inputmask("+7 (999)-999-99-99"); phoneMask.mask(phone);
 
+function sendJSON() {
+    event.preventDefault();
+    let name = document.querySelector('#name');
+    let phone = document.querySelector('#phone');
+    let city = document.querySelector('#city');
+    var settings = {
+        "url": "https://backend.sdelkaservicedomain.ru/sdelka/leadsForLanding/leadFromLanding",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "phone": phone.value,
+            "name": name.value,
+            "city": city.value,
+        }),
+    };
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+}
 
 gsap.registerPlugin(ScrollTrigger);
-
 gsap.to("#h1_shadow", {
     scrollTrigger: {
         trigger: "h1",
         start: "30% 0%",
         end: "170% 0%",
-        // markers: true,
         scrub: true
-    },
-    y: -100
+    }, y: -100
 });
 
 gsap.to("#freeImg", {

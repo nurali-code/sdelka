@@ -167,7 +167,7 @@
 					<mark class="red js-textify">в подарок</mark>
 				</h2>
 				<p class="info">При переходе в Сделку из другой системы и оплате трёх месяцев работы </p>
-				<a href="#" class="btn_blue">Запросить демонстрацию</a>
+				<button class="btn_blue modal_toggle">Запросить демонстрацию</button>
 			</div>
 
 			<div class="section">
@@ -285,13 +285,13 @@
 		<div class="modal-content">
 			<button class="modal-close wrap modal_toggle">&times;</button>
 			<p class="heading">Мы свяжемся с вами <br> в течение 15 минут</p>
-			<form action="#">
-				<label for="inp_name">Ваше имя</label>
-				<input type="text" id="inp_name" name="name" required>
-				<label for="inp_tel">Телефон</label>
-				<input type="tel" name="tel" id="inp_tel" required>
-				<label for="inp_city">Город</label>
-				<input type="text" name="city" id="inp_city" required>
+			<form onsubmit="sendJSON(event)">
+				<label for="name">Ваше имя</label>
+				<input type="text" id="name" name="name" required>
+				<label for="phone">Телефон</label>
+				<input type="tel" name="phone" id="phone" required>
+				<label for="city">Город</label>
+				<input type="text" name="city" id="city" required>
 				<button type="submit" class="btn_prime">Свяжитесь со мной</button>
 			</form>
 			<p class="policy">Нажимая на кнопку, Вы соглашаетесь с условиями <a href="#">политики конфиденциальности</a>
@@ -314,6 +314,7 @@
 	</script>
 	<script src="./js/gsap.min.js"></script>
 	<script src="./js/ScrollTrigger.min.js"></script>
+	<script src="./js/inputmask.min.js"></script>
 	<script src="./js/script.js"></script>
 
 
